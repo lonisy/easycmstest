@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="ui-mobile">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Title</title>
+	<meta name="MobileOptimized" content="240">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="apple-touch-icon" href="assets/images/appico.png"/>
+	<link rel="stylesheet" href="assets/css/mobile_style.css">
+	<script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/huaping.js"></script>
+	<script type="text/javascript" src="assets/js/sj_function.js"></script>
+</head>
+
+<body>
+<script type="text/javascript" src="assets/js/getBodyAuto.js"></script>
+<style type="text/css">
+	.ClientWidth {
+		width: 640px;
+	}
+	.main_box {
+		min-height: 680px;
+	}</style>
+<style type="text/css">.contentHeight {
+	height: 592px;
+}</style>
+<div data-role="page" id="index" class="main_box">
+	<div data-role="header">
+		<header>
+			<div class="logo fl"><a href="#"><img src="assets/images/logo.png"></a></div>
+			<div class="search fr" style="margin-right:10px;"><a>搜索</a></div>
+			<div class="clear"></div>
+		</header>
+		<div class="navbox">
+			<ul class="navBody div_color">
+				<li><a href="index.html" title="网站首页">网站首页</a></li>
+				<li><a href="column.html" title="栏目内容页面">栏目内容页面</a></li>
+				<li><a href="list.html" title="内容列表页面">内容列表页面</a></li>
+				<li><a href="article.html" title="内容详情页">内容详情页</a></li>
+				<li><a href="pic-list.html" title="图片栏目列表">图片栏目列表</a></li>
+			</ul>
+		</div>
+		<section>
+			<div class="scroll">
+				<div class="slide_01" id="slide_01" style="overflow: hidden;">
+					<div style="overflow: hidden; zoom: 1; width: 32766px;">
+						<div style="float: left; overflow: hidden; zoom: 1;">
+							<div>
+								<div>
+									<div class="mod_01"><a href="#"><img class="ClientWidth" src="assets/images/01.jpg"
+									                                     alt="" width="640" height="256"></a></div>
+									<div class="mod_01"><a href="#"><img class="ClientWidth" src="assets/images/02.jpg"
+									                                     alt="" width="640" height="256"></a></div>
+									<div class="mod_01"><a href="#"><img class="ClientWidth" src="assets/images/03.jpg"
+									                                     alt="" width="640" height="256"></a></div>
+								</div>
+							</div>
+						</div>
+						<div style="float: left; overflow: hidden; zoom: 1;">
+							<div>
+								<div>
+									<div class="mod_01"><a href="#"><img class="ClientWidth" src="assets/images/01.jpg"
+									                                     alt="" width="640" height="256"></a></div>
+									<div class="mod_01"><a href="#"><img class="ClientWidth" src="assets/images/02.jpg"
+									                                     alt="" width="640" height="256"></a></div>
+									<div class="mod_01"><a href="#"><img class="ClientWidth" src="assets/images/03.jpg"
+									                                     alt="" width="640" height="256"></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dotModule_new w5">
+					<div id="slide_01_dot"><span class="selected" title="第1页"></span><span class="dotItem"
+					                                                                       title="第2页"></span><span
+									class="dotItem" title="第3页"></span></div>
+				</div>
+				<div class="sl_left" id="slide_01_left"></div>
+				<div class="sl_right" id="slide_01_right"></div>
+			</div>
+			<script type="text/javascript">
+        if (document.getElementById("slide_01") && typeof(f_slide_01) == "undefined") {
+          var f_slide_01 = new ScrollPic();
+          f_slide_01.scrollContId = "slide_01"; //内容容器ID
+          f_slide_01.dotListId = "slide_01_dot";//点列表ID
+          f_slide_01.dotOnClassName = "selected";
+          f_slide_01.arrLeftId = "slide_01_left"; //左箭头ID
+          f_slide_01.arrRightId = "slide_01_right";//右箭头ID
+          f_slide_01.frameWidth = sp_getClientWidth;
+          f_slide_01.pageWidth = sp_getClientWidth;
+          f_slide_01.upright = false;
+          f_slide_01.speed = 10;
+          f_slide_01.space = 30;
+          f_slide_01.autoPlay = true;
+          f_slide_01.initialize(); //初始化
+        }
+        ;
+			</script>
+		</section>
+	</div>
+	<script>
+    function showmore() {
+
+      var count = $('.items').length;
+      $.ajax({
+        type: "POST",
+        url: "wap/article/more.html",
+        data: "count=" + count + "&sid=427",
+        dataType: 'json',
+        success: function (msg) {
+
+          var html = '';
+
+          if (msg.data.length == 0) {
+            $('#span_more').text('没有数据了');
+          } else {
+            for (var i = 0; i < msg.data.length; i++) {
+
+              html += '<li class="items"><a href="' + msg.data[i].url + '"><div><h3 class="newsTitle"><span class="name">' + msg.data[i].title + '</span></h3><p class="time">' + msg.data[i].time + '</p></div></a></li>';
+
+            }
+
+            $('#listtable').append(html);
+
+          }
+
+
+        }
+      });
+
+    }
+
+	</script>
+	<div data-role="header">
+		<header class="headerNews div_color">
+      <span class="return fl" onclick="javascript:history.go(-1);">
+        <div class="btn">
+            <b>
+            <em></em>
+            </b>
+            <span> 返回 </span>
+        </div>
+      </span>
+			<span class="BigclassName">新闻资讯</span>
+			<span class="rightButton fr">
+
+	  		<!--
+      <span class="textSizeBtn" style="position: relative;">
+            <em class="title">字<sup> + </sup></em>
+            <div class="textSize" style="display: none;">
+              <div class="contArrow">
+                <em>◆</em>
+                <i>◆</i>
+               </div>
+               <ul class="cont">
+                 <li style="font-size:12px;"> 小 </li>
+                 <li style="font-size:14px;" class="current"> 中 </li>
+                 <li style="font-size:16px;"> 大 </li>
+               </ul>
+            </div>
+         </span>
+		 -->
+      </span>
+			<div class="clear"></div>
+		</header>
+	</div>
+	<section>
+		<ul class="NewsListCont" id="listtable">
+
+
+			<li class="items"><a href="wap/article/show/id/414/sid/477.html">
+				<div><h3 class="newsTitle"><span class="name">挤出加工低烟无卤阻燃电缆料时要注意4点</span></h3>
+					<p class="time">2017/04/19</p></div>
+			</a></li>
+			<li class="items"><a href="wap/article/show/id/413/sid/478.html">
+				<div><h3 class="newsTitle"><span class="name">揭秘低烟无卤阻燃电缆料配方</span></h3>
+					<p class="time">2017/04/09</p></div>
+			</a></li>
+			<li class="items"><a href="wap/article/show/id/412/sid/476.html">
+				<div><h3 class="newsTitle"><span class="name">影响聚氯乙烯颗粒的因素</span></h3>
+					<p class="time">2017/03/24</p></div>
+			</a></li>
+			<li class="items"><a href="wap/article/show/id/411/sid/477.html">
+				<div><h3 class="newsTitle"><span class="name">聚氯乙烯注塑成型时溢料飞边的原因</span></h3>
+					<p class="time">2017/03/07</p></div>
+			</a></li>
+			<li class="items"><a href="wap/article/show/id/410/sid/478.html">
+				<div><h3 class="newsTitle"><span class="name">高压pe再生颗粒的等级划分</span></h3>
+					<p class="time">2017/02/12</p></div>
+			</a></li>
+			<li class="items"><a href="wap/article/show/id/409/sid/476.html">
+				<div><h3 class="newsTitle"><span class="name">聚氯乙烯pvc电缆料价格</span></h3>
+					<p class="time">2017/01/18</p></div>
+			</a></li>
+			<li class="items"><a href="wap/article/show/id/408/sid/477.html">
+				<div><h3 class="newsTitle"><span class="name">再生PP和新材PP颗粒从外观如何区别</span></h3>
+					<p class="time">2017/01/09</p></div>
+			</a></li>
+			<li class="items"><a href="wap/article/show/id/407/sid/478.html">
+				<div><h3 class="newsTitle"><span class="name">PE再生塑料出现静电现象怎么办？</span></h3>
+					<p class="time">2016/12/30</p></div>
+			</a></li>
+			<li class="items"><a href="wap/article/show/id/406/sid/476.html">
+				<div><h3 class="newsTitle"><span class="name">导致pe再生颗粒质量分布不齐的原因</span></h3>
+					<p class="time">2016/12/14</p></div>
+			</a></li>
+			<li class="items"><a href="wap/article/show/id/405/sid/477.html">
+				<div><h3 class="newsTitle"><span class="name">如何提高聚氯乙烯pvc电缆料质量</span></h3>
+					<p class="time">2016/12/14</p></div>
+			</a></li>
+		</ul>
+
+		<div class="more">
+			<span onclick="showmore()" id="span_more"> 查看更多 </span>
+		</div>
+
+	</section>
+
+
+	<section class="showMore div_color" role="Bar_Left_C">
+		<table cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+				<td class="barWrap" valign="top">
+              <span class="closeBar active">
+                <em></em>
+              </span>
+				</td>
+				<td class="contWrap" style="min-height: 2000px;">
+					<div id="hScrollList" class="div_bg_color" style="height: 340px; overflow: hidden;">
+
+
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+	<section class="copyright div_color">
+		<div>临沂越鑫线缆材料有限公司 版权所有</div>
+	</section>
+
+	<div class="fixed-mmenu star" id="fixed-mmenu-alert">
+		<div class="fixed-mmenu-box">
+			<div class="mmenu-warp">
+				<div class="mmenu-alert">
+					<div class="mmenu-list d-box">
+						<div class="b-flew">
+							<a href="tel:13791559023">
+								<span class="icon icon-1"></span>
+								<p>电话</p>
+							</a>
+						</div>
+						<div class="b-flew">
+							<a href="wap/message/index.html">
+								<span class="icon icon-2"></span>
+								<p>留言</p>
+							</a>
+						</div>
+						<div class="b-flew">
+							<a href="wap/map/index.html">
+								<span class="icon icon-3"></span>
+								<p>地图</p>
+							</a>
+						</div>
+						<div class="b-flew">
+							<a href="wap/share/index.html">
+								<span class="icon icon-4"></span>
+								<p>分享</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+    $(function () {
+//				var w= ($(window).width())-60;    //默认为浏览器宽度
+      var w = 300; //设置菜单的宽度
+      $('#fixed-mmenu-alert').click(function () {
+        $(this).toggleClass('active');
+        if ($(this).hasClass("active")) {
+          $(this).find('.mmenu-alert').animate({
+            width: w + 'px',
+            backgroundPositionY: "-35px"
+          }, 500);
+          $(this).find('.mmenu-list').removeClass('disnone');
+          $(this).find(".fixed-mmenu-box").css("background", "none");
+          $(this).find(".mmenu-warp").css("background", "none");
+          $(this).removeClass('star');
+        } else {
+          $(this).find('.mmenu-list').addClass('disnone');
+          $(this).find('.mmenu-alert').animate({
+            width: "51px",
+            backgroundPositionY: "10px"
+          }, 500);
+          setTimeout(function () {
+            $('#fixed-mmenu-alert').find(".fixed-mmenu-box").css("background", "rgba(218,47,37,.3)");
+            $('#fixed-mmenu-alert').find(".mmenu-warp").css("background", "rgba(218,47,37,.4)");
+            $('#fixed-mmenu-alert').addClass('star');
+          }, 500)
+        }
+      })
+    });
+
+	</script>
+
+
+</div>
+
+<section class="SearchBox">
+	<div class="SearchC ClientWidth">
+		<div class="SearchTop div_bg_color">
+			<ul>
+				<li class="current div_color" value="product">产品</li>
+				<li value="article">资讯</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+		<div class="SearchBottom div_color">
+			<form method="get" action="wap/search/search.html">
+				<input id="keywords" class="fd-input" placeholder="关键字" maxlength="32" name="keywords" type="text">
+				<input name="SearchAction" id="SearchAction" value="product" type="hidden">
+				<input type="submit" name="Searchsubmit_btn" id="Searchsubmit_btn" class="fd-button div_bg_color" value="搜索"
+				       onclick="if($('#keywords').val()=='') {alert('请输入关键词'); return false;}">
+
+				<input type="hidden" name="__hash__" value="340b09a7e8ca309c00d935efb471186b_8ee4241790d1a6d51c3f1c474ba311d5">
+			</form>
+		</div>
+	</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Title</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link href="assets/css/reset.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/webmain.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/ddsmoothmenu.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+
+	<script>
+    var site_url = '';
+    var tpl_path = '/Tpl/Home/default/';
+    var public = '/Public';
+    var mobile = '1';
+    var root_path = '';
+	</script>
+	<script type="text/javascript" src="assets/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="assets/js/common.js"></script>
+	<script type="text/javascript" src="assets/js/cookie.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.KinSlideshow-1.2.1.js"></script>
+	<script type="text/javascript" src="assets/js/webtry_roll.js"></script>
+	<script type="text/javascript" src="assets/js/ddsmoothmenu.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.js"></script>
+	<script type="text/javascript">
+    ddsmoothmenu.init({
+      mainmenuid: "MainMenu", //menu DIV id
+      orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+      classname: 'ddsmoothmenu', //class added to menu's outer DIV
+      //customtheme: ["#1c5a80", "#18374a"],
+      contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+    })
+	</script>
+</head>
+<body>
+<div class="width">
+	<img src="assets/img/logo.jpg" class="fl pt30"/>
+	<img src="assets/img/tel.jpg" class="fr"/>
+	<div class="clear"></div>
+</div>
+
+
+<div id="MainMenu" class="ddsmoothmenu">
+	<ul>
+		<li class="firstli"><a href="index.html" title="网站首页"><span>网站首页</span></a></li>
+		<li><a href="column.html" title="栏目内容页面"><span>栏目内容页面</span></a></li>
+		<li><a href="list.html" title="内容列表页面"><span>内容列表页面</span></a></li>
+		<li><a href="article.html" title="内容详情页"><span>内容详情页</span></a></li>
+		<li><a href="pic-list.html" title="图片栏目列表"><span>图片栏目列表</span></a></li>
+		<li><a id="menu_selected" href="comments.html" title="留言板"><span>留言板</span></a></li>
+	</ul>
+</div>
+
+<div class="submess"></div>
+
+
+<div id="page_main" class="clearfix">
+	<div class="page-right">
+		<div class="site-nav"><span>当前位置 : </span>
+
+			<a href="http://www.lyzsklcj.com/">主页</a> &gt;&gt;<a href="http://www.lyzsklcj.com/liuyan/">在线留言</a>
+		</div>
+
+		<div class="ny-bt clearfix">
+			<span class="linebd"></span>
+			<strong>
+				在线留言
+			</strong>
+			<span class="linebd"></span>
+		</div>
+		<div class="en">
+		</div>
+		<div class="width">
+			<div class="pt20 subsort">
+				<ul>
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div style="line-height:36px; font-size:14px; border-bottom:1px solid #ccc; margin-bottom:30px; padding-bottom:30px;">
+
+			公司自成立以来，始终坚持以技术为先导，配以严格的品质检验，完善的管理制度。前程似锦、任重道远，我们将始终秉承“诚信服务、尽善尽美”的服务理念。历经多年的风雨，我们取得了令人瞩目的发展，其骄人的成绩获得掌声阵阵！未来，让我们一起去谱写新篇章。
+			您如果对我们的产品感兴趣或者有任何的疑问，您可以直接给我们留言或直接与我们联络，我们将在收到您的信息后，会第一时间及时与您联络， 我们衷心的希望能与各届朋友合作
+		</div>
+		<div class="page-guestbook">
+			<script type="text/javascript">
+        function check() {
+          if (document.guestbook.Guest_Name.value == "") {
+            alert("请填写您的姓名");
+            document.guestbook.Guest_Name.focus();
+            return false
+          }
+          if (document.guestbook.Guest_TEL.value == "") {
+            alert("请填写您的电话");
+            document.guestbook.Guest_TEL.focus();
+            return false
+          }
+
+          if (document.guestbook.Content.value == "") {
+            alert("请填写反馈内容");
+            document.guestbook.Content.focus();
+            return false
+          }
+          if (document.guestbook.checkcode.value == "") {
+            alert("请填写验证码");
+            document.guestbook.checkcode.focus();
+            return false
+          }
+          if (document.guestbook.checkcode.value.length == 0) {
+            alert("验证码不能为空");
+            document.guestbook.checkcode.focus();
+            return false;
+          }
+
+
+          return true;
+        }
+			</script>
+
+			<form onsubmit="return check()" action="http://www.lyzsklcj.com/message/doSaveMessage.html" id="guestbook"
+			      name="guestbook" method="post">
+				<input type="hidden" name="productid" value=""/>
+				<dl class="clearfix">
+					<dt>您的姓名：</dt>
+					<dd><input type="text" id="Guest_Name" name="Guest_Name"><span>*</span></dd>
+					<dt>电话：</dt>
+					<dd><input type="text" id="Guest_TEL" name="Guest_TEL"><span>*</span></dd>
+					<dt>邮件地址：</dt>
+					<dd><input type="text" id="Guest_Email" name="Guest_Email"></dd>
+
+					<dt>QQ：</dt>
+					<dd><input type="text" id="Guest_qq" name="Guest_QQ"></dd>
+					<dt>传真：</dt>
+					<dd><input type="text" id="Guest_FAX" name="Guest_FAX"></dd>
+					<dt>地址：</dt>
+					<dd><input type="text" id="Guest_ADD" name="Guest_ADD"></dd>
+					<dt>邮编：</dt>
+					<dd><input type="text" id="Guest_ZIP" name="Guest_ZIP"></dd>
+					<dt>留言内容：</dt>
+					<dd><textarea id="Content" class="Content" rows="" cols="" name="Content"></textarea></dd>
+					<dt>验证码：</dt>
+					<dd>
+						<input type="text" autocomplete="off" maxlength="4" id="checkcode" name="checkcode">
+						<!--<img style="vertical-align:middle;" src='/Public/verify/'-->
+						     <!--onclick="$(this).attr('src','/Public/verify/'+Math.random())"/>-->
+						<span>*</span>
+					</dd>
+				</dl>
+				<p><input type="submit" class="submit" value="提交" id="submit" name="submit"></p>
+				<input type="hidden" name="__hash__" value="c337e79df5075030bb268432b191af1b_17382511f6711916fd7f5e1fd0f5d520"/>
+			</form>
+		</div>
+	</div>
+
+
+</div>
+<div class="footbg">
+	<div class="width">
+		<div class="pt20">
+			<div style=" text-align:left;">
+				城市分站：<a href="http://www.lyzsklcj.com">主站</a>&nbsp;&nbsp;&nbsp;<a
+							href="http://www.lyzsklcj.com/shandong/">山东</a>&nbsp;&nbsp;&nbsp;<a href="http://www.lyzsklcj.com/hebei/">河北</a>&nbsp;&nbsp;&nbsp;<a
+							href="http://www.lyzsklcj.com/henan/">河南</a>&nbsp;&nbsp;&nbsp;<a href="http://www.lyzsklcj.com/jiangsu/">江苏</a>&nbsp;&nbsp;&nbsp;<a
+							href="http://www.lyzsklcj.com/taian/">泰安</a>&nbsp;&nbsp;&nbsp;<a href="http://www.lyzsklcj.com/qingdao/">青岛</a>&nbsp;&nbsp;&nbsp;<a
+							href="http://www.lyzsklcj.com/liaocheng/">聊城</a>&nbsp;&nbsp;&nbsp;<a
+							href="http://www.lyzsklcj.com/zaozhuang/">枣庄</a>&nbsp;&nbsp;&nbsp;<a
+							href="http://www.lyzsklcj.com/laiwu/">莱芜</a>&nbsp;&nbsp;&nbsp;
+			</div>
+			<p>
+				临沂越鑫线缆材料有限公司&nbsp; 联系人:王经理&nbsp; 联系电话:13791559023&nbsp; 公司地址:临沂市兰山区半程工业园
+			</p>
+			<script language="javascript" src="http://count19.51yes.com/click.aspx?id=195005887&logo=12"
+			        charset="gb2312"></script>
+			<script language="javascript" type="text/javascript" src="//js.users.51.la/17733966.js"></script>
+			<noscript><a href="//www.51.la/?17733966" target="_blank"><img
+							alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="//img.users.51.la/17733966.asp"
+							style="border:none"/></a></noscript>
+			| <a href="http://www.lyzsklcj.com/sitemap.html">网站地图</a>
+			<p>本站部分图片和内容来源于网络，版权归原创作者或原公司所有，如果您认为我们侵犯了你的版权，请告知!我们将立即删除。</p>
+		</div>
+	</div>
+</div>
+
+<!--<script>-->
+<!--//在线客服代码-->
+<!--$.ajax({-->
+<!--type: "POST",-->
+<!--url: "http://www.lyzsklcj.com/home/public/getOnline.html",-->
+<!--dataType:'json',-->
+<!--success: function(msg){-->
+
+<!--$("body").append(msg.html);-->
+<!--}-->
+<!--});-->
+<!--</script>-->
+
+
+</body>
+</html>
